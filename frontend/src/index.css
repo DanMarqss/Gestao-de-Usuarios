@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f0f0; /* Cor de fundo da página */
+}
+
+header {
+  background-color: #007bff; /* Azul do cabeçalho */
+  color: #fff; /* Texto branco */
+  padding: 20px;
+  text-align: center;
+  position: fixed; /* Fixa o cabeçalho na parte superior */
+  top: 0; /* Posiciona na parte superior */
+  width: 100%; /* Largura total da tela */
+}
+
+h1 {
+  margin: 0; /* Remove margens do h1 */
+}
+
+.container {
+  max-width: 960px; /* Define a largura máxima do conteúdo */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  padding: 20px; /* Espaçamento interno */
+}
