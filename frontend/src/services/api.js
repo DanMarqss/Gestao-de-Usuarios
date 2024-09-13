@@ -1,31 +1,15 @@
 import axios from 'axios';
 
+const API_BASE_URL = 'http://localhost:3000'; // Adjust this to your API's base URL
+
 const api = axios.create({
-  baseURL: 'http://localhost:3000',  // URL do seu back-end NestJS
+  baseURL: API_BASE_URL,
 });
 
-export const getUsers = async () => {
-  const response = await api.get('/users');
-  return response.data;
-};
+export const getUsers = () => api.get('/users');
+export const getUserById = (id) => api.get(`/users/${id}`);
+export const createUser = (userData) => api.post('/users', userData);
+export const updateUser = (id, userData) => api.put(`/users/${id}`, userData);
+export const deleteUser = (id) => api.delete(`/users/${id}`);
 
-export const createUser = async (userData) => {
-  const response = await api.post('/users', userData);
-  return response.data;
-};
-
-// Adicionando funções para atualizar e deletar usuários
-
-export const updateUser = async (id, userData) => {
-  const response = await api.put(`/users/${id}`, userData);
-  return response.data;
-};
-
-export const deleteUser = async (id) => {
-  const response = await api.delete(`/users/${id}`);
-  return response.data;
-};
-export const getUserList = async () => {
-  const response = await api.get('/users');
-  return response.data;
-};
+export default api;

@@ -1,58 +1,79 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Input, Button } from 'antd';
-import { getUserList } from '../services/api';
+import { Eye, Edit, Trash2 } from 'lucide-react';
+import { getUsers, deleteUser } from '../services/api';
 
-const UserList = () => {
+const UserList = ({ onCreateUser }) => {
   const [users, setUsers] = useState([]);
-  const [searchText, setSearchText] = useState('');
 
   useEffect(() => {
     fetchUsers();
   }, []);
 
   const fetchUsers = async () => {
-    const data = await getUserList();
-    setUsers(data);
+    try {
+      const response = await getUsers();
+      setUsers(response.data);
+    } catch (error) {
+      console.error('Erro ao buscar usuários:', error);
+    }
   };
 
-  const columns = [
-    {
-      title: 'Nome',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'Ações',
-      key: 'actions',
-      render: (_, record) => (
-        <>
-          <Button onClick={() => handleEdit(record.id)}>Editar</Button>
-          <Button onClick={() => handleDelete(record.id)}>Deletar</Button>
-        </>
-      ),
-    },
-  ];
+  const handleDelete = async (id) => {
+    if (window.confirm('Tem certeza que deseja excluir este usuário?')) {
+      try {
+        await deleteUser(id);
+        fetchUsers(); // Atualiza a lista após a exclusão
+      } catch (error) {
+        console.error('Erro ao excluir usuário:', error);
+      }
+    }
+  };
+
+  const handleView = (id) => {
+    // Implementar a lógica para visualizar o usuário
+    console.log('Visualizar usuário', id);
+  };
 
   const handleEdit = (id) => {
-    // Implementar lógica de edição
+    // Implementar a lógica para editar o usuário
+    console.log('Editar usuário', id);
   };
-
-  const handleDelete = (id) => {
-    // Implementar lógica de deleção
-  };
-
-  const filteredUsers = users.filter(user =>
-    user.name.toLowerCase().includes(searchText.toLowerCase())
-  );
 
   return (
-    <div>
-      <Input.Search
-        placeholder="Pesquisar usuários"
-        onChange={(e) => setSearchText(e.target.value)}
-        style={{ marginBottom: 16 }}
-      />
-      <Table columns={columns} dataSource={filteredUsers} />
+    <div className="p-8">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-semibold">Usuários</h2>
+        <div className="flex items-center">
+          <input 
+            type="text" 
+            placeholder="Pesquisa" 
+            className="border rounded-l px-2 py-1 w-40"
+          />
+          <button onClick={onCreateUser} className="bg-blue-500 text-white px-4 py-1 rounded-r">
+            + Cadastrar Usuário
+          </button>
+        </div>
+      </div>
+      <table className="w-full">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="text-left p-2">Nome</th>
+            <th className="text-right p-2">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td className="p-2">{user.name}</td>
+              <td className="text-right p-2">
+                <button className="mr-2" onClick={() => handleView(user.id)}><Eye size={18} /></button>
+                <button className="mr-2" onClick={() => handleEdit(user.id)}><Edit size={18} /></button>
+                <button onClick={() => handleDelete(user.id)}><Trash2 size={18} /></button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
