@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Put, Body, Param, Delete, Query } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiQuery, ApiParam, ApiBody } from '@nestjs/swagger'; // Importações do Swagger
+import { ApiTags, ApiOperation, ApiResponse, ApiQuery, ApiParam, ApiBody } from '@nestjs/swagger';
 import { UserService } from './user.service';
 import { User } from './user.entity';
 

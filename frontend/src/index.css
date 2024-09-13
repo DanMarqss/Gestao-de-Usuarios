@@ -8,25 +8,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f0f0; /* Cor de fundo da página */
+  background-color: #f0f0f0; 
 }
 
 header {
-  background-color: #007bff; /* Azul do cabeçalho */
-  color: #fff; /* Texto branco */
+  background-color: #007bff; 
+  color: #fff; 
   padding: 20px;
   text-align: center;
-  position: fixed; /* Fixa o cabeçalho na parte superior */
-  top: 0; /* Posiciona na parte superior */
-  width: 100%; /* Largura total da tela */
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
 }
 
 h1 {
-  margin: 0; /* Remove margens do h1 */
+  margin: 0; 
 }
 
 .container {
-  max-width: 960px; /* Define a largura máxima do conteúdo */
-  margin: 0 auto; /* Centraliza o conteúdo */
-  padding: 20px; /* Espaçamento interno */
+  max-width: 960px; 
+  margin: 0 auto; 
+  padding: 20px; 
 }

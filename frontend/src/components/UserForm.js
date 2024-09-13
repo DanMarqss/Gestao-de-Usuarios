@@ -16,31 +16,31 @@ const UserForm = ({ onClose, onUserCreated }) => {
     let isValid = true;
     let newErrors = {};
 
-    // Name validation (only letters)
+    
     if (!/^[a-zA-Z\s]*$/.test(formData.name)) {
       newErrors.name = 'Nome deve conter apenas letras';
       isValid = false;
     }
 
-    // Email validation
+    
     if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Email inválido';
       isValid = false;
     }
 
-    // Matricula validation (only numbers)
+    
     if (!/^\d+$/.test(formData.registration)) {
       newErrors.registration = 'Matrícula deve conter apenas números';
       isValid = false;
     }
 
-    // Password validation (6 alphanumeric characters)
+    
     if (!/^[a-zA-Z0-9@$!%*?&]{6,}$/.test(formData.password)) {
       newErrors.password = 'Senha deve conter 6 caracteres alfanuméricos';
       isValid = false;
     }
 
-    // Password match validation
+    
     if (formData.password !== formData.repeatPassword) {
       newErrors.repeatPassword = 'As senhas não coincidem';
       isValid = false;
