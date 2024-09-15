@@ -80,6 +80,6 @@ Criação de um sistema CRUD completo utilizando **NestJS** no backend e **React
     A aplicação estará disponível em http://localhost:3001 - Aplicação FrontEnd
     APlicação BackEnd vai estar rodando na http://localhost:3000.
 
-    Para acessar interface Web somente acessa a com porta 3001.
+    Para acessar interface Web acessa somente com a porta 3001.
 
     
