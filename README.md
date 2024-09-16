@@ -59,7 +59,7 @@ Criação de um sistema CRUD completo utilizando **NestJS** no backend e **React
    ```bash
    npm run start
    ```
-   O backend estará rodando no endereço http://localhost:3000 e você pode acessar a documentação da API em http://localhost:3000/api-docs.
+   O backend estará rodando no endereço http://localhost:4000 e você pode acessar a documentação da API em http://localhost:4000/api-docs.
 
    ## Frontend - React
 
@@ -78,8 +78,11 @@ Criação de um sistema CRUD completo utilizando **NestJS** no backend e **React
      ```
 
     A aplicação estará disponível em http://localhost:3001 - Aplicação FrontEnd
-    APlicação BackEnd vai estar rodando na http://localhost:3000.
+    APlicação BackEnd vai estar rodando na http://localhost:4000.
 
     Para acessar interface Web acessa somente com a porta 3001.
 
-    
+    Como essa aplicação está subindo em uma VM, você irá acessar no IP: http://179.191.232.25
+    Para acessar a documentação no swagger você irá acessar no mesmo local, mudando a localização com base nas "/" ficando dessa forma: http://179.191.232.25/api-docs
+
+    Siga até o último passo de forma localmente, se for acessar em cima da minha VM irá acessar com o IP informado.
