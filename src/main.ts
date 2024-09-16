@@ -7,7 +7,7 @@ async function bootstrap() {
 
   // Habilitar CORS globalmente
   app.enableCors({
-    origin: ['http://179.191.232.25:4000', 'http://Gestão-de-Usuarios.com'], 
+    origin: ['http://179.191.232.25:8080', 'http://Gestão-de-Usuarios.com'], 
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
@@ -22,6 +22,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-docs', app, document);
 
-  await app.listen(4000);
+  await app.listen(8080);
 }
 bootstrap();
