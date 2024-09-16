@@ -7,7 +7,7 @@ async function bootstrap() {
 
   // Habilitar CORS globalmente
   app.enableCors({
-    origin: '*', // Ou especifique a origem do seu cliente React
+    origin: ['http://179.191.232.25:4000', 'http://Gestão-de-Usuarios.com'], 
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
