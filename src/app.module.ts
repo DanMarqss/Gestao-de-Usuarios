@@ -10,7 +10,7 @@ import { UserModule } from './user/user.module';
       port: 5432,
       username: 'conecthus',
       password: 'danilo123',
-      database: 'gestao_de_usuarios_db',
+      database: 'gestao_usuarios_db',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true, 
     }),
