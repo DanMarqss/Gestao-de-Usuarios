@@ -8,7 +8,7 @@ import { UserModule } from './user/user.module';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'postgres',
+      username: 'conecthus',
       password: 'danilo123',
       database: 'gestao_usuarios_db',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
