@@ -17,7 +17,7 @@
 
 ## 🔖 Sobre
 
-Criação de um sistema CRUD completo utilizando **NestJS** no backend e **React** no frontend. O projeto faz parte de um teste técnico para uma vaga na **Conecthus**.
+Criação de um sistema CRUD completo utilizando **NestJS** no backend e **React** no frontend. O projeto faz parte de um teste técnico.
 
 ---
 
